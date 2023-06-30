@@ -16,6 +16,7 @@ pipeline {
         stage("sonarQube analysis") {
             steps {
                 withSonarQubeEnv('Sonar') {
+                    echo 'scanning'
                     sh 'mvn sonar:sonar'
                 }
             }
