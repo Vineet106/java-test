@@ -35,6 +35,7 @@ pipeline {
 
         //         sh "aws lambda update-function-code --function-name $function_name --region us-east-2 --s3-bucket javabucketvineet --s3-key sample-1.0.3.jar"
         //     }
-        }
+       // }
     }
 }
+
