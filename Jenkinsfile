@@ -12,7 +12,15 @@ pipeline {
                 sh 'mvn package'
             }
         }
-
+        
+        stage("build & sonarQube analysis") {
+            agent any
+            steps {
+                withSonarQubeEnv('Sonar') {
+                    sh 'mvn sonar:sonar'
+                }
+            }
+        }
         stage('Push') {
             steps {
                 echo 'Push'
